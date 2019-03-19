@@ -1,0 +1,44 @@
+1. The reason people write in pseudocode is to brainstorm an idea of a poject while having to write in proper code
+
+2.because pseudocode is writen in a way for human to understand while normal code in write in a language that the computer understand
+
+
+
+P1.
+
+INPUT first number
+INPUT second number
+IF the first number is greater than or equal to the second number THEN
+    PRINT the first number
+ELSE
+    Print the second number
+END IF
+
+
+P2.
+
+INIT printNumbers to 1
+WHILE printNumbers is less than 100
+  PRINT printNumbers
+  ADD 1 to printNumber
+END WHILE
+  PRINT printNumbers
+
+P3.
+
+PROMPT for userInput of fullName to search.
+ FOR each entry in the phonebook
+    IF fullName === full name of the phonebook entry
+    PRINT phonebook entry data
+    END IF
+ END FOR
+
+P4.
+
+var userInput = prompt();
+for (i=0; i <= phoneBook.length; i++) {
+    if (userInput === phonebook.fullName) {
+      return phonebook.fullName + " - " + phonebook.phoneNumber
+     }
+}
+
