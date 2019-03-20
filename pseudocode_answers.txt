@@ -29,6 +29,8 @@ END WHILE
 
 P3.
 
+P3.
+
 SET phonebook
 prompt userImput
 FOR each entry in the phonebook
@@ -36,8 +38,7 @@ IF userImput === to phonebook item
 PRINT phonebook item
 
 ELSE 
-RETURN userInput not in phonebook
-
+RETURN null
 END IF
 END FOR
 
@@ -47,5 +48,5 @@ const phonebook = ['Tom','cassie','Alex'];
 var userInput = prompt();
 
 for(let i = 0; i < phonebook.length; i++){
-  userInput === phonebook[i] ? console.log(`${userInput}`) : console.log( userInput +'not in phonebook')
+  userInput === phonebook[i] ? console.log(`${userInput}`) : null
 }
