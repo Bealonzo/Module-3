@@ -4,6 +4,9 @@
 
 
 
+
+
+
 P1.
 
 INPUT first number
@@ -26,19 +29,23 @@ END WHILE
 
 P3.
 
-PROMPT for userInput of fullName to search.
- FOR each entry in the phonebook
-    IF fullName === full name of the phonebook entry
-    PRINT phonebook entry data
-    END IF
- END FOR
+SET phonebook
+prompt userImput
+FOR each entry in the phonebook
+IF userImput === to phonebook item
+PRINT phonebook item
+
+ELSE 
+RETURN userInput not in phonebook
+
+END IF
+END FOR
 
 P4.
 
+const phonebook = ['Tom','cassie','Alex']; 
 var userInput = prompt();
-for (i=0; i <= phoneBook.length; i++) {
-    if (userInput === phonebook.fullName) {
-      return phonebook.fullName + " - " + phonebook.phoneNumber
-     }
-}
 
+for(let i = 0; i < phonebook.length; i++){
+  userInput === phonebook[i] ? console.log(`${userInput}`) : console.log( userInput +'not in phonebook')
+}
