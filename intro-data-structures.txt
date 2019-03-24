@@ -22,10 +22,10 @@ function leaveLine(startIndex, deleteCount) {
 }
 
 
-addNewPerson("Mary"); //1(b)
-findPerson("Josh"); // 1(c)
+addNewPerson("Sam"); //1(b)
+findPerson("Ava"); // 1(c)
 findPerson("Emily") //Returns -1 / 1(d)
-cutInLine(1, 0, "Melissa") //1(e)
+cutInLine(1, 0, "Samantha") //1(e)
 leaveLine(4, 1); //1(f)
 
 /*
