@@ -1,0 +1,36 @@
+//1(a)
+var personsInLine = ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+
+//1(b)
+function addNewPerson(personName) {
+    return personsInLine.push(personName);
+}
+
+//1(c / d)
+function findPerson(personName) {
+    return personsInLine.indexOf(personName);
+}
+
+//1(e)
+function cutInLine(startIndex, deleteCount, personName){
+    return personsInLine.splice(startIndex, deleteCount, personName);
+}
+
+//1(f)
+function leaveLine(startIndex, deleteCount) {
+    return personsInLine.splice(startIndex, deleteCount);
+}
+
+
+addNewPerson("Sam"); //1(b)
+findPerson("Ava"); // 1(c)
+findPerson("Emily") //Returns -1 / 1(d)
+cutInLine(1, 0, "Samantha") //1(e)
+leaveLine(4, 1); //1(f)
+
+/*
+
+2. A list of users stored in a database. Depending on the complexity of the information the structure here could change. If I was looking to store just names, a simple array would suffice. However, 
+   in the case of a more complex example, I would likely look at an object data structure to store not just the username, but also the email of the user, age, location, etc.
+
+3. Accesing this for developers would be the basic process of accessing values within an object. IE: User.name or User.email, or User.age
