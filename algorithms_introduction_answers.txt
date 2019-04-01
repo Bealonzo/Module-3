@@ -1,0 +1,29 @@
+Making coffee;
+    First add water to coffee pot
+    Add coffee grounds to coffee pot
+    Turn on coffee pot
+
+Washing dishes;
+    Turn on water
+    Add soap to water and fill sink up
+    Turn off the water 
+    Wash the dishes
+
+ Laundry
+ put clothes in the machine
+ add detergent 
+ turn machine on
+
+ 2 
+    Salesforce has a algorithm that uses machine learning that summarize longer blocks of text.
+
+    DoorDash has an algorithm that while you are out on a deliver if you have leftover 
+    food you can take it to the food banks.
+
+    UberEats uses a algorithm that uses math to determine a way to get your food faster.
+
+
+
+3 
+A good algorithm has a list of steps that goes in order to find the solution  vs not having a 
+proper set of intructions to be able to find the solution.
