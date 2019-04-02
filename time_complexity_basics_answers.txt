@@ -1,0 +1,40 @@
+1.	Time Complexity is the metric used to describe the efficient of an algorithm.
+
+2. 	Runtime can have two uses, it can be used synomously with time Complexity, or refer to the physical time duration of an algorithm
+
+3. 	We calculate how quickly the time to run the program grows, relative to the amount of input we feed into the program. When making this estimate we assume that input is infite and then express the result as a function.
+		IE: n = input  // f(n) = rate the algorithm grows as the input grows.
+
+4. 
+	1. Constant Growth Rate - O(1)
+	2. Logarithmic Growth Rate - O(log n)
+	3. Linear Growth Rate - O(n)
+	4. Log-Linear Growth Rate - O(n log n)
+	5. Quadratic Growth Rate - O(n^2)
+	6. Exponential Growth Rate - O(2^n)
+	7. Factorial Growth Rate - O(n!) <-- Not Covered in Lesson
+
+
+5. 
+	- Exponential Growth Rate: A real life comparison, would be like saving one cent (USD) on the first day of the month, and each suqsequent day you double the number of amount you save for thirty days.
+	- Day 1: $0.01
+	- Day 2: $0.02
+	- Day 3: $0.04
+	- Day 4: $0.08
+	- Day 5: $0.16
+	..
+	- Day 30: $5,368,709.12
+
+6. 
+	- O(n) - Linear Growth Rate
+
+7. 
+	- O(n^2) - Quadratic Growth Rate
+
+8. 
+	- O(2^n) - Exponential Growth Rate
+
+9. 
+- With question six being a Linear Growth Rate of O(n), it would be the most efficient in my opinion. 
+However, each one is doing different things, what may be efficient the most efficient way to perform one task, 
+may not be the most efficient way to perform another.
