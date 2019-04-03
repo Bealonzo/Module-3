@@ -1,0 +1,195 @@
+1. A Binary Tree is a data structure in which each Node may point to a left child and a right child. and the reason is unique is becasue in onw of the more simple way to have a tree structure.
+
+2. These are guesses that an algorithm makes to solve a complex problem sooner by sacrificing accuracy.
+
+
+3. a game of chess is another example of heuristics because while a person can see ahead multiple turn and computer trying to accomplish the same task will take to much time and it will become slower as you continue 
+
+
+
+4. a DFS will travel all the way down a path to look before moving down the next one while BFS will check the entire row of node before mving to the next one.
+
+
+5. an undirected, a-cyclic, unweighted graph would be a graph that the edge connecting two node and it can flow in both direction, while A-cycly mean that the graph doesn't perforn a loop so if you get to the end the only option for you is to turn around if you want to return, and being Unweighted just mean that the cost of travel is not given to travel between nodes 
+
+
+
+
+6. a  directed, A-cyclic and unweighted.
+
+
+
+function Node(data) {
+  this.data = data;
+  this.left = null;
+  this.right = null;
+}
+
+function BinarySearchTree() {
+  this.root = null;
+}
+
+
+BinarySearchTree.prototype.add = function(data) {
+  var node = new Node(data);
+  if(!this.root) {
+    this.root = node;
+  } else {
+    var current = this.root;
+    while(current) {
+      if(node.data < current.data) {
+        if(!current.left) {
+          current.left = node;
+          break;
+        }
+        current = current.left;
+      } else if (node.data > current.data) {
+        if(!current.right) {
+          current.right = node;
+          break;
+        }
+        current = current.right;
+      } else {
+        break;
+      }
+    }
+  }
+};
+
+
+
+BinarySearchTree.prototype.contains = function(data) {
+  var current = this.root;
+  while(current) {
+    if(data === current.data) {
+       
+return  console.log(data + " is found in tree");
+      
+    }
+    if(data < current.data) {
+      current = current.left;
+    } else {
+      current = current.right;
+    }
+  }
+  return console.log(data + " is not found in tree");
+};
+
+
+//test case
+
+
+let bst = new BinarySearchTree();
+
+bst.add(25);
+bst.add(26);
+bst.add(255);
+bst.add(254);
+bst.add(257);
+bst.contains(5);
+
+
+
+2. 
+
+
+
+
+class Node {
+	constructor(data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+class BinarySearchTree {
+	constructor() {
+		this.root = null;
+	}
+
+	findDistanceBetweenTwoNodes(root, n1, n2) {
+		var lowestCommonAncestor = this.findCommonAncestor(root, n1, n2);
+		var distanceNode1ToRoot = this.countAncestors(lowestCommonAncestor, n1);
+		var distanceNode2ToRoot = this.countAncestors(lowestCommonAncestor, n2);
+		var distanceRootToAncestor = this.countAncestors(root, lowestCommonAncestor);
+		var totalDistance = (distanceNode1ToRoot + distanceNode2ToRoot) - (2 * distanceRootToAncestor);
+		return ('The distance between node ' + n1 + ' and node ' + n2 + ' is ' + totalDistance);
+	}
+
+	findCommonAncestor(root, n1, n2) {
+		if (!root) return;
+		var lowestCommonAncestor = root.data;
+		if (n1 === lowestCommonAncestor || n2 === lowestCommonAncestor) {
+			return lowestCommonAncestor;
+		}
+		if (n1 < lowestCommonAncestor && n2 < lowestCommonAncestor) {
+			return this.findCommonAncestor(root.left, n1, n2);
+		}
+		if (n1 > lowestCommonAncestor && n2 > lowestCommonAncestor) {
+			return this.findCommonAncestor(root.right, n1, n2);
+		}
+		return lowestCommonAncestor;
+	}
+
+	countAncestors(root, data) {
+		let thisNode = this.root;
+		let nodeCount = 0;
+		while (thisNode) {
+			if (data === thisNode.data) {
+				return nodeCount;
+			}
+			thisNode = data < thisNode.data ? thisNode.left : thisNode.right;
+			nodeCount++;
+		}
+	}
+
+	getRootNode() {
+		return this.root;
+	}
+
+	insert(data) {
+		var newNode = new Node(data);
+		if (this.root === null) {
+			this.root = newNode;
+			this.length++;
+		} else {
+			this.insertNode(this.root, newNode);
+		}
+	}
+
+	insertNode(node, newNode) {
+		if (newNode.data < node.data) {
+			if (node.left === null) {
+				node.left = newNode;
+				this.length++;
+			} else {
+				this.insertNode(node.left, newNode);
+			}
+		} else {
+			if (node.right === null) {
+				node.right = newNode;
+				this.length++;
+			} else {
+				this.insertNode(node.right, newNode);
+			}
+		}
+	}
+}
+
+var BST = new BinarySearchTree();
+
+BST.insert(9);
+BST.insert(110);
+BST.insert(30);
+BST.insert(120);
+BST.insert(44);
+BST.insert(19);
+BST.insert(1);
+BST.insert(79);
+BST.insert(300);
+
+var root = BST.getRootNode();
+BST.findDistanceBetweenTwoNodes(root, 1, 300); 
+
+

@@ -1,0 +1,196 @@
+	1. Linked lists are useful in that they are more memory efficient - rather than having to take up consecutive memory addresses, 
+we can assign a memory reference to the list item.
+ However, searching through a linked list (especially a long one) can be time-consuming, 
+as we need to start at the beginning of the list, and each list item points to the next list item - we may have to go through the whole list if our desired item were at its end.
+
+
+2.GIT is a great example of a linked list - we have a HEAD commit, or the location where we are currently working, and when we create an additional commit, our current commit (list item) then points to the next commit.
+ When we wish to access an older commit, we simply have to move the HEAD (working location) to that commit, by starting from the initial commit, which will link to the next commit, then the following, etc. until we reach our desired commit.
+ Another good example of a linked list would be a treasure hunt - each set of clues at a location refers to the next location. When we start from the beginning,
+ we follow the clues from location to location (list items) until we reach our desired location (the treasure) - we necessarily have to start at the beginning or else we may get lost (clues may be dependent on prior knowledge).
+
+
+
+
+
+
+
+
+
+
+
+
+PQ1.
+
+
+LinkedList.prototype.push = function(val){  
+    var node = {
+       value: val,
+       next: null
+    }
+  
+    if(!this.head){
+      this.head = node;  
+      this.length += 1;    
+      return node;
+    }
+    else{
+      current = this.head;
+      
+ // In the pseudocode, there is no while loop which is a way to move from node to node on the list
+ // while there is a current.next (current.next does not equal null), current equals the next node and not null
+
+      while(current.next){  
+        current = current.next;
+      }
+      
+      current.next = node;
+      this.length += 1;
+      return node;
+    }
+  }
+
+
+
+PQ2. 
+
+ function LinkedList(){
+  this.head= null;
+  this.length=0;
+}
+
+LinkedList.prototype.push = function(val){  
+    var node = {
+       value: val,
+       next: null
+    }
+  
+    if(!this.head){
+      this.head = node;  
+      this.length += 1;    
+      return node;
+    }
+    else{
+      current = this.head;
+      while(current.next){
+        current = current.next;
+      }
+      current.next = node;
+      this.length += 1;
+      return node;
+    }
+  }
+
+LinkedList.prototype.duplicate = function(){
+ if (!this.head || !this.head.next) {
+      console.log("no duplicates");
+      return;
+  }
+
+    var thisNode = this.head;
+    while (thisNode != null) {
+      var previousNode = thisNode;
+      var nextNode = thisNode.next;
+      while (nextNode != null) {
+        if (thisNode.value == nextNode.value) {
+          previousNode.next = nextNode.next;
+          this.length --;
+        } else {
+          previousNode = nextNode;
+        }
+        nextNode = nextNode.next;
+      }
+      thisNode = thisNode.next;
+    }
+    return this;
+  }
+
+list= new LinkedList()
+list.push(5);
+list.push(4);
+list.push(1);
+list.push(1);
+list.duplicate()
+
+
+
+
+
+
+PQ3. 
+
+
+function LinkedList(){
+  this.head= null;
+  this.length=0;
+}
+
+LinkedList.prototype.push = function(val){  
+    var node = {
+       value: val,
+       next: null
+    }
+  
+    if(!this.head){
+      this.head = node;  
+      this.length += 1;    
+      return node;
+    }
+    else{
+      current = this.head;
+      while(current.next){
+        current = current.next;
+      }
+      current.next = node;
+      this.length += 1;
+      return node;
+    }
+  }
+
+LinkedList.prototype.duplicate = function(){
+ if (!this.head || !this.head.next) {
+      console.log("no duplicates");
+  }
+
+    var thisNode = this.head;
+    while (thisNode != null) {
+      var previousNode = thisNode;
+      var nextNode = thisNode.next;
+      while (nextNode != null) {
+        if (thisNode.value == nextNode.value) {
+          previousNode.next = nextNode.next;
+          this.length --;
+        } else {
+          previousNode = nextNode;
+        }
+        nextNode = nextNode.next;
+      }
+      thisNode = thisNode.next;
+    }
+    return this;
+  }
+
+LinkedList.prototype.reverse= function() {
+    var previousNode = null;
+    var thisNode = this.head;
+    var nextNode;
+
+    while (thisNode) {
+      nextNode = thisNode.next;
+      thisNode.next = previousNode;
+      previousNode = thisNode;
+      thisNode = nextNode;
+    }
+
+    this.head = previousNode;
+  }
+
+
+   
+list= new LinkedList()
+list.push(5);
+list.push(3);
+list.push(1);
+list.push(4);
+list.reverse()
+

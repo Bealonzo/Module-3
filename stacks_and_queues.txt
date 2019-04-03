@@ -1,0 +1,81 @@
+1. 	Stack use LIFO Priority,while Queue use FIFO
+
+2.	The Stack and Queue both are the Non-primitive data structures, Stack and queue is linear data structures they both stores sequentially and Insertion 
+	and Deletion operation can be performed on Stack as well as in queue.
+
+3. 	i would use the stack method since redo and undo are just do the last actiom. The LIFO methodology makes the most sense with the less complexity compared to the task.
+
+
+/*
+
+
+*/
+
+// Programming Question 1
+function reverse(string) {
+	var stack = [];
+	for (i=0; i < string.length; i++) {
+		stack.push(string[i]);
+	}
+	var reversed = "";
+	while (stack.length > 0) {
+		let removed = stack.pop();
+		reversed += removed;
+	}
+	return reversed;
+}
+
+console.log(reverse("Bloc!"));
+
+// Programming Question 2
+class Stack {
+    constructor(){
+        this.pop = function(queue){
+            var newQueue = [];
+            var itemToRemove = [];
+
+            for(var i=0;i<queue.length; i++){
+                if(i==queue.length-1) {
+                    itemToRemove.push(queue[i]);
+                }else{
+                    newQueue.push(queue[i]);
+                }
+            }
+            return itemToRemove;   
+        }
+    }
+}
+
+var stack = new Stack();
+console.log(stack.pop('Gordon'))
+
+// Programming Question 3
+
+class Queue {
+    constructor(){
+        this.elements = [];
+    }
+    enqueue(element) {
+        this.elements.push(element);
+    }
+    dequeue() {
+        if(this.isEmpty())
+        return "Empty";
+        return this.elements.shift();
+    }
+
+    isEmpty() {
+        return this.elements.length === 0;
+    }
+
+}
+
+var queue = new Queue();
+
+queue.enqueue(10)
+queue.enqueue(10)
+
+console.log(queue)
+queue.dequeue()
+console.log(queue)
+

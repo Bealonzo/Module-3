@@ -1,0 +1,130 @@
+1.	Clean code is code that is written in such a way that it is inherently readable and understandable, simple, and easy to maintain, usually designed using various principles and best practices in mind. Ideally, it is code that is not only understood by the author, but quickly understood by most other readers and is not overly complicated or bloated with redundancy and excessive comments.
+
+
+2.	think a great critical type system, where computing and programming is used could be the power fall-over that run emergency generators at hospitals. So if there was a critical error in that or a fault due to shoddy programming then when the power goes out, and the generator doesn't fall over and provide that power to the facility you have a very real risk of patient death or injury.
+
+
+3.	Definitely not, first, it fails the squint test: we have odd chunks of comments off to the right, and the actual code to the left is indented in an odd way. Next, it's not really self-documented - we have to look into what the variables x, y, and z actually represent. Additionally, it does not follow DRY - we end up printing Z twice when we could simply do so once, at the end.
+
+```
+
+FUNCTION do(temperature, units)
+  IF units is equal to 'fahrenheit' OR 'F' THEN
+    SET convertedTemperature to (temperature - 32) * (5/9) // degrees fahrenheit to celsius formula
+  ELSE IF units is equal to 'celsius' OR 'C' THEN
+    SET convertedTemperature to (temperature * 9/5 + 32) // degrees celsius to fahrenheit formula
+  END IF
+  PRINT convertedTemperature
+END FUNCTION
+```
+
+4.	In terms of pseudocode, I believe it is.
+
+
+
+ 5a.)
+
+```
+
+FUNCTION addTax(subTotal)
+    RETURN subtotal * tax
+END FUNCTION
+
+FUNCTION checkOutCustomer(subTotal, discountRate)
+   RETURN subTotal * discountRate + addTax
+END FUNCTION
+
+FUNCTION displayTotal()
+   PRINT "Your total due is: " + checkOutCustomer
+
+FUNCTION finalizePayment(amount, paymentType)
+   IF paymentType = 'CASH' THEN
+       PRINT "Change due: " + amount - checkOutCustomer
+   ELSE IF paymentType = 'CREDIT CARD' THEN
+       PRINT "Your credit card has been charged: " + checkOutCustomer
+   END IF
+END FUNCTION
+
+```
+
+   5b.)
+```
+
+ FUNCTION checkoutBook(book, guest)
+     IF (guest.accountActive is true AND guest.hasOverdueBooks is false AND guest.outstandingFees equals 0)
+        APPEND book to guest.books
+        SET book.status to "Checked Out"
+        PRINT "Your books have been issued."
+      ELSE
+        PRINT "Unable to check out book."
+      END IF
+END FUNCTION
+
+```
+5c. 
+
+```
+
+CLASS BankAccount
+ FUNCTION displayBalance
+    PRINT balance
+ END FUNCTION
+
+ FUNCTION deposit(amount)
+    SET balance to balance + amount
+ END FUNCTION
+
+ FUNCTION withdraw(amount)
+     IF balance > amount THEN
+       SET balance to balance - amount
+     END IF
+ END FUNCTION
+END CLASS
+
+CLASS MakeOffers
+ FUNCTION creditCardOffer
+     IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+     END
+ END FUNCTION
+
+ FUNCTION checkStatus
+     IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+     END
+ END FUNCTION
+END CLASS
+
+```
+
+
+6.	
+```
+function isPerfectSquare(array) {
+	let sum = 0;
+	for (i=0; i < array.length; i++) {
+		sum += array[i]
+	}
+	if (Math.sqrt(sum) * Math.sqrt(sum) === sum) {
+      return Math.sqrt(sum);
+  } else {
+	    return sum;
+		}
+}
+
+isPerfectSquare([10,1,4,6,1,1,2]);
+```
+
+7.
+```
+function checkForDuplicates(array) {
+    for (i = 0; i < array.length; i++) {
+        if (array.indexOf(array[i]) !== array.lastIndexOf(array[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+checkForDuplicates([10,1,4,6,1,1,2]);
+```
