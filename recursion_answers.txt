@@ -1,0 +1,62 @@
+1. Recursion - a series of steps with a step referencing/calling a previous step, causing a loop to be created, usually only broken out of if some condition is met. 
+   Iteration - Working through steps with no such looping/reference to previous steps necessary to complete the instructions.
+   In recursion, it's possible for us to wind up in an infinite loop - without defining a base case/condition to break the loop, 
+   the program will continually reference those same steps and forever loop back. However, with iteration, there should be no such looping - 
+   we can complete an iterative function in a certain amount of time - however, we may end up with a more complicated set of instructions that can be harder to understand than a recursive set of instructions.
+
+2.  Fibonacci sequence, factorial, merge sort, quick sort, binary tree.
+
+3. Recursion should be used when an algorithm can be defined as a combination of sub-results starting with known cases.
+An example of that is when you're implementing a function to calculate factorial.
+Recursion should be avoid when running straight through a date set. For example trying to find the maximum value in an array of numbers.
+
+4.
+
+ Compare the recursive and iterative solutions to the three algorithms from the checkpoint (Factorial, Maximum, and Fibonacci). 
+What is similar, and what is different?
+A: What is similar is that the results are achived with both techniques. But the differece is how the algorithms get to their results.
+When iteration is used to run through a data set, the code looks much simpler, but doing the same with recursion seems to look
+more complicated, and the same goes for when calculating factorial using iteration, it just seems more complicated than when using
+recursion. of a loop is involved in both the recursive and iterative functions, however, the way that loop is created is distinct for each solution. In the recursive function, the loop is created by calling the function itself, until some base case is met/condition is met and the loop then broken. In the iterative function, we define the loop solely within the function - there are no calls to the function itself. Both in the recursive and iterative cases, the duration of the loop is dependent on the input size n, however, the background memory and handling of the functions may vary (calling the function recursively vs a defined loop). Another big difference is the use of base cases in the recursive function - without a well-defined base case, we cannot break the recursive loop intuitively, whereas our iterative function requires no such base case to be implemented and run completely without a stack overflow.
+
+5.
+
+var arrayOfArrays = [[1,2,3],[4,5,6],[7, [8, 9],[[10, 11, 12],[13, 14, 15], 16]]];
+var count = 0;
+
+function countArrayItems(arr){
+  if(!Array.isArray(arr)){
+     count++;
+  } else {
+    for(var i = 0; i < arr.length; i++){
+      countArrayItems(arr[i]);
+    }
+  }
+  return count;
+}
+
+console.log(countArrayItems(arrayOfArrays));
+
+6. palindrome problem
+
+function palindrome(word){
+  console.log(word);
+  if (word.length === 1){
+    return true; // base case, if the word is 1 letter long
+  } else if ( word.slice(0,1) === word.slice(-1)){ //recursive case
+    return palindrome(word.slice(1, -1)); // reducing the word to smaller substrings by removing beginning and ending letters recursively, comparing if the first/last letter are the same for each substring
+  } else {
+    return false; // if first/last letter are not the same, returns false.
+  }
+
+}
+
+let test1 = palindrome('racecar') // should return true
+let test2 = palindrome('monkey') // should return false
+let test3 = palindrome('ssunss') // should return false
+console.log(test1);
+console.log(test2);
+console.log(test3);
+```
+
+7. this is an example of recursion because it show similar properties to recursion since it ask to call itself over and over similar to recursion function.
